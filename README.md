@@ -1,8 +1,6 @@
 # Mysticeti over Iroh
 
-the paper Mysticeti: Low-Latency DAG Consensus with Fast Commit Path enabling reproducible results
-
-A Rust implementation of the [Mysticeti](https://arxiv.org/abs/2310.14821) DAG consensus protocol with [Iroh](https://github.com/n0-computer/iroh) as the P2P networking backbone.
+A fast, production-ready, maintained rust implementation of the [Mysticeti](https://arxiv.org/abs/2310.14821) DAG consensus protocol with [Iroh](https://github.com/n0-computer/iroh) as the P2P networking backbone.
 
 ## Architecture
 
@@ -48,10 +46,10 @@ it sent during the run.
 The **mysticeti-bench** crate provides Criterion benchmarks for core throughput (`add_blocks`, `try_commit`, linearizer) and an in-process multi-node scenario (4 validators, simulated rounds). See [BENCHMARKS.md](BENCHMARKS.md) for TPS and blocks/sec results (1/2/4 leaders, various tx-per-block sizes).
 
 ```bash
+cargo bench -p mysticeti-bench --bench tps
 cargo bench -p mysticeti-bench
 cargo bench -p mysticeti-bench -- core_throughput
 cargo bench -p mysticeti-bench -- multi_node
-cargo bench -p mysticeti-bench --bench tps
 ```
 
 ## Configuration
