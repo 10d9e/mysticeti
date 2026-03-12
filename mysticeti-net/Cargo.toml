@@ -1,0 +1,16 @@
+[package]
+name = "mysticeti-net"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+mysticeti-core = { path = "../mysticeti-core" }
+iroh = "0.96"
+tokio = { version = "1", features = ["sync", "io-util", "net"] }
+serde = { version = "1", features = ["derive"] }
+bincode = "1"
+tracing = "0.1"
+thiserror = "1"
+anyhow = "1"
+bytes = "1"
+parking_lot = "0.12"

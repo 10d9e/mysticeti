@@ -1,0 +1,17 @@
+[package]
+name = "mysticeti-core"
+version = "0.1.0"
+edition = "2021"
+description = "Mysticeti DAG consensus protocol core (transport-agnostic)"
+
+[dependencies]
+tokio = { version = "1", features = ["sync", "time"] }
+serde = { version = "1", features = ["derive"] }
+bincode = "1"
+tracing = "0.1"
+ed25519-dalek = { version = "2", features = ["rand_core"] }
+thiserror = "1"
+anyhow = "1"
+bytes = "1"
+parking_lot = "0.12"
+blake3 = "1"
