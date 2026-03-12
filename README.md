@@ -43,7 +43,7 @@ it sent during the run.
 
 ## Benchmarks
 
-The **mysticeti-bench** crate provides Criterion benchmarks for core throughput (`add_blocks`, `try_commit`, linearizer) and an in-process multi-node scenario (4 validators, simulated rounds).
+The **mysticeti-bench** crate provides Criterion benchmarks for core throughput (`add_blocks`, `try_commit`, linearizer) and an in-process multi-node scenario (4 validators, simulated rounds). See [BENCHMARKS.md](BENCHMARKS.md) for TPS and blocks/sec results (1/2/4 leaders, various tx-per-block sizes).
 
 ```bash
 cargo bench -p mysticeti-bench
