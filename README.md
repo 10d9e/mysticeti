@@ -1,6 +1,8 @@
 # Mysticeti over Iroh
 
-A Rust implementation of the [Mysticeti](https://github.com/MystenLabs/mysticeti) DAG consensus protocol with [Iroh](https://github.com/n0-computer/iroh) as the P2P networking backbone.
+the paper Mysticeti: Low-Latency DAG Consensus with Fast Commit Path enabling reproducible results
+
+A Rust implementation of the [Mysticeti](https://arxiv.org/abs/2310.14821) DAG consensus protocol with [Iroh](https://github.com/n0-computer/iroh) as the P2P networking backbone.
 
 ## Architecture
 
