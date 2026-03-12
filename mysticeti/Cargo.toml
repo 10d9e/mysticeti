@@ -7,6 +7,10 @@ edition = "2021"
 name = "mysticeti"
 path = "src/main.rs"
 
+[[bin]]
+name = "mysticeti-client"
+path = "src/bin/mysticeti_client.rs"
+
 [dependencies]
 mysticeti-core = { path = "../mysticeti-core" }
 mysticeti-net = { path = "../mysticeti-net" }
@@ -16,3 +20,6 @@ tracing = "0.1"
 clap = { version = "4", features = ["derive"] }
 anyhow = "1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+rand = "0.8"

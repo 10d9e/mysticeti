@@ -16,6 +16,31 @@ cargo test -p mysticeti-core
 cargo run -p mysticeti -- --authority-index 0
 ```
 
+## Dockerized 4-node e2e example
+
+A simple Docker-based end-to-end setup is provided with 4 validator nodes and a client
+that submits random transactions across them.
+
+Build and run:
+
+```bash
+# From the workspace root
+docker compose build
+docker compose up
+```
+
+This will:
+
+- Build the `mysticeti` image using `mysticeti/Dockerfile`.
+- Start 4 validators (`validator0`..`validator3`) using the shared
+  `mysticeti/config/docker-committee.toml` config.
+- Start a `client` container running the `mysticeti-client` binary, which connects
+  to the validators on ports `7000`–`7003` and sends newline-delimited transactions
+  for 60 seconds at ~100 tx/s by default.
+
+Validator logs will show committed subdags; the client will print how many transactions
+it sent during the run.
+
 ## Benchmarks
 
 The **mysticeti-bench** crate provides Criterion benchmarks for core throughput (`add_blocks`, `try_commit`, linearizer) and an in-process multi-node scenario (4 validators, simulated rounds).
