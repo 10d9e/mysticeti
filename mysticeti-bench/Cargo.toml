@@ -1,8 +1,17 @@
 [package]
 name = "mysticeti-bench"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
 description = "Benchmarks and multi-node harness for Mysticeti"
+publish = false
+
+[dependencies]
+mysticeti-core = { path = "../mysticeti-core", version = "0.0.1" }
+mysticeti-net = { path = "../mysticeti-net", version = "0.0.1" }
+criterion = { version = "0.5", features = ["html_reports"] }
+tokio = { version = "1", features = ["sync", "time", "rt-multi-thread"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 [[bench]]
 name = "core_throughput"
@@ -15,14 +24,6 @@ harness = false
 [[bench]]
 name = "tps"
 harness = false
-
-[dependencies]
-mysticeti-core = { path = "../mysticeti-core" }
-mysticeti-net = { path = "../mysticeti-net" }
-criterion = { version = "0.5", features = ["html_reports"] }
-tokio = { version = "1", features = ["sync", "time", "rt-multi-thread"] }
-tracing = "0.1"
-tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 [dev-dependencies]
 tokio = { version = "1", features = ["full"] }

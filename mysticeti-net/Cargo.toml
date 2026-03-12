@@ -1,10 +1,12 @@
 [package]
 name = "mysticeti-net"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
+description = "Mysticeti network layer (Iroh transport)"
+license = "Apache-2.0"
 
 [dependencies]
-mysticeti-core = { path = "../mysticeti-core" }
+mysticeti-core = { path = "../mysticeti-core", version = "0.0.1" }
 iroh = "0.96"
 tokio = { version = "1", features = ["sync", "io-util", "net"] }
 serde = { version = "1", features = ["derive"] }

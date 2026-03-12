@@ -1,7 +1,9 @@
 [package]
 name = "mysticeti"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
+description = "Mysticeti DAG consensus node and client binaries"
+license = "Apache-2.0"
 
 [[bin]]
 name = "mysticeti"
@@ -12,8 +14,8 @@ name = "mysticeti-client"
 path = "src/bin/mysticeti_client.rs"
 
 [dependencies]
-mysticeti-core = { path = "../mysticeti-core" }
-mysticeti-net = { path = "../mysticeti-net" }
+mysticeti-core = { path = "../mysticeti-core", version = "0.0.1" }
+mysticeti-net = { path = "../mysticeti-net", version = "0.0.1" }
 iroh = "0.96"
 tokio = { version = "1", features = ["full"] }
 tracing = "0.1"
